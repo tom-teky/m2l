@@ -1,0 +1,8 @@
+<h1>Bienvenue sur l'application</h1><br>
+
+<% if account_signed_in? %>
+  <h3>Bonjour <%= current_account.email %></h3>
+  <h4>Votre solde est de : <%= current_account.balance %><h2>
+<% else %>
+  Veuillez vous connecter pour effectuer des transactions
+<% end %>

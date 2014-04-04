@@ -1,0 +1,6 @@
+<%= form_for("/targets/#{@target}/transactions", method: "post") do |f| %>
+  <%= f.label :montant %><br>
+  <%= f.number_field :amount %>
+
+  <%= submit_tag("Transacter") %>
+<% end %>

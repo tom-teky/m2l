@@ -1,0 +1,11 @@
+<h1> Nouvelle transaction </h1>
+
+<%= form_for [@transaction.src_account, @transaction], url: {controller: "transactions", action: "create", target_id: @target.to_param} do |f| %>
+  <%= f.label :amount %><br>
+  <%= f.number_field :amount %>
+
+  <%= submit_tag("Transacter") %>
+<% end %>
+
+
+<%= link_to 'Back', transactions_path, :class => 'btn btn-default' %>

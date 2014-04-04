@@ -1,0 +1,22 @@
+<h1>Liste des membres</h1>
+  <table class="table table-striped">
+  <thead>
+    <tr> 
+      <th>Nom</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+      
+      <tr>
+        <td><%= target.email %></td>
+        <td><%= link_to_if @current_account.can_perform_a_transaction?, 'New transaction', new_target_transaction_path(target), :class => 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+</table>
+  </tbody>
+
+<br>
+
+<i> Note : Le bouton de transaction sera désactivé lorsque votre solde est à 0. </i>
